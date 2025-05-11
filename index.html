@@ -3,140 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EduBuddy App</title>
+  <title>EduBuddy</title>
+  <meta property="og:title" content="EduBuddy App" />
+  <meta property="og:url" content="https://your-edubuddy-link.com" />
+  <meta property="og:image" content="app.png" />
+  <meta name="twitter:title" content="EduBuddy App" />
+  <meta name="twitter:description" content="Group study, chat, and share notes with classmates." />
+  <meta name="twitter:image" content="app.png" />
+  <meta name="twitter:card" content="summary_large_image" />
   <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #fff7e6;
-  color: #2c3e50;
+    body {
+      
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('bg.svg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+      padding: 0 5%;
+    }
+    .left {
+      max-width: 45%;
+    }
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+   
+    .right img {
+      width: 800px;
+      padding-left: 8%;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 3rem;
+      }
+      .left, .right {
+        max-width: 100%;
+      }
+      .badges img {
+        margin: 0.5rem;
+      }
+      .store-badge-container {
+  text-align: center;
+  margin: 2rem 0;
 }
 
-.container {
-  max-width: 960px;
-  margin: auto;
-  padding: 1rem;
+.store-badge-a {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+.store-badge-a:hover {
+  transform: scale(1.05);
+}
+
+.store-badge-img {
+  height: 60px;
+  width: auto;
+  max-width: 100%;
+}
+
+    }
+.store-badge-container {
   text-align: center;
 }
 
-.header {
-  margin-top: 1rem;
-}
-
-.header h1 {
-  font-size: 2.5rem;
-  color: #d84315;
-  margin: 0.5rem 0;
-}
-
-.header h2 {
-  font-size: 1.2rem;
-  color: #2e7d32;
-  margin: 0.3rem 0;
-}
-
-.header p {
-  font-size: 1rem;
-  color: #5d4037;
-  max-width: 700px;
-  margin: 0.5rem auto;
-}
-
-.screenshot img {
-  width: 90%;
-  max-width: 600px;
-  margin-top: 1rem;
-}
-
-.features {
-  text-align: left;
-  background: #fff3cd;
-  border-left: 6px solid #ffc107;
-  padding: 1rem;
-  margin-top: 1.5rem;
-  border-radius: 8px;
-}
-
-.features h2 {
-  font-size: 1.2rem;
-  color: #110a03;
-  margin-bottom: 0.5rem;
-}
-
-.features ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.features li {
-  padding: 0.3rem 0;
-  font-size: 0.95rem;
-}
-
-.download-btn {
+.store-badge-a {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #001429;
-  color: rgb(255, 251, 225);
-  font-size: 1rem;
+  padding: 12px 24px;
+  background-color: #001426; /* blue color */
+  color: white;
   border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
 
-.download-btn:hover {
-  background-color: #5e3a00;
+.store-badge-a:hover {
+  background-color: #00963f; /* darker blue */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.team {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #6d4c41;
-  line-height: 1.5;
-}
 
-footer {
-  margin-top: 2rem;
-  font-size: 0.75rem;
-  color: #aaa;
-}
-
-  </style>
+</style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
+    <div class="left">
       <h1>EduBuddy</h1>
-      <h2>Learn, Create <span style="color:#388e3c;">& Succeed</span></h2>
-      <p>EduBuddy helps students collaborate, share knowledge, and enhance learning through easy communication and organized discussions.</p>
+      <p>Get the app to chat, share notes, and study in groups with your classmates!</p>
+   
+  <a href="https://drive.google.com/file/d/1xdtevQxJ-0tqwt2GjnHZaKlfxHRL0Grh/view" class="store-badge-a" download>
+  📥 Download EduBuddy app
+  </a>
+
     </div>
-
-    <div class="screenshot">
-      <img src="app.png" alt="EduBuddy App Screenshot" />
+    <div class="right">
+      <img src="app.png" alt="EduBuddy App Screenshot">
     </div>
-  <a class="download-btn" href="https://drive.google.com/file/d/1xdtevQxJ-0tqwt2GjnHZaKlfxHRL0Grh/view" download>
-      📥 Download EduBuddy App
-    </a>
-
-    <div class="features">
-      <h2>Why Choose EduBuddy?</h2>
-      <ul>
-        <li>🌟 Group study made simple and engaging</li>
-        <li>💬 Real-time chat with classmates</li>
-        <li>📁 Share notes, media & ideas easily</li>
-        <li>🎯 Organized topic-wise discussions</li>
-      </ul>
-    </div>
-
-  
-
-
-    <footer>
-      <p>&copy; 2025 EduBuddy. All rights reserved.</p>
-    </footer>
   </div>
 </body>
 </html>
