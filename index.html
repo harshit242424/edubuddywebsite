@@ -11,42 +11,32 @@
   <meta name="twitter:description" content="Group study, chat, and share notes with classmates." />
   <meta name="twitter:image" content="app.png" />
   <meta name="twitter:card" content="summary_large_image" />
-
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
-      background: url('bg.svg') no-repeat center center fixed;
-      background-size: cover;
+      background: linear-gradient(to bottom right, #1e3c72, #2a5298);
       color: white;
-    }
-
-    .container {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      height: 100vh;
-      padding: 0 5%;
-      flex-wrap: wrap;
-    }
-
-    .left {
-      flex: 1;
-      max-width: 50%;
-    }
-
-    .right {
-      flex: 1;
-      max-width: 50%;
-      display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .content {
+      max-width: 800px;
     }
 
     h1 {
       font-size: 3rem;
-      font-weight: bold;
       margin-bottom: 1rem;
     }
 
@@ -55,72 +45,62 @@
       margin-bottom: 2rem;
     }
 
-    .right img {
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .store-badge-a {
+    .download-btn {
       display: inline-block;
-      padding: 12px 24px;
-      background-color: #001426;
-      color: white;
-      border-radius: 8px;
+      padding: 14px 28px;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: bold;
+      color: white;
+      background-color: #00c853;
+      border: none;
+      border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease;
     }
 
-    .store-badge-a:hover {
-      background-color: #00963f;
+    .download-btn:hover {
+      background-color: #00b248;
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem 1rem;
-        height: auto;
-      }
+    .app-image {
+      margin-top: 3rem;
+    }
 
-      .left, .right {
-        max-width: 100%;
-        flex: none;
-        margin-bottom: 2rem;
-      }
+    .app-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
 
+    @media (max-width: 600px) {
       h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
 
       p {
         font-size: 1rem;
       }
 
-      .right img {
-        max-width: 90%;
+      .download-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="left">
-      <h1>EduBuddy</h1>
-      <p>Get the app to chat, share notes, and study in groups with your classmates!</p>
-      <a href="https://drive.google.com/file/d/1xdtevQxJ-0tqwt2GjnHZaKlfxHRL0Grh/view" class="store-badge-a" download>
-        📥 Download EduBuddy app
-      </a>
-    </div>
+  <div class="content">
+    <h1>Welcome to EduBuddy 📚</h1>
+    <p>Chat with classmates, share notes, and collaborate on study goals — all in one app.</p>
+    <a href="https://drive.google.com/file/d/1xdtevQxJ-0tqwt2GjnHZaKlfxHRL0Grh/view" class="download-btn" download>
+      📥 Download EduBuddy App
+    </a>
 
-    <div class="right">
-      <img src="app.png" alt="EduBuddy App Screenshot">
+    <div class="app-image">
+      <img src="app.png" alt="EduBuddy App Preview" />
     </div>
   </div>
 </body>
