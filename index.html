@@ -12,6 +12,7 @@
   <meta name="twitter:image" content="app.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <style>
+    
     * {
       box-sizing: border-box;
       margin: 0;
@@ -20,30 +21,41 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      text-align: center;
       padding: 2rem;
     }
 
     .content {
       max-width: 800px;
       width: 100%;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
     }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      background-color:#840051;
+      font: poppins;
+      font-weight: 900;
+      color: rgb(255, 248, 236);
     }
 
     p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
+            background-color:#840051;
+      font: poppins;
+      font-weight: 500;
+      color: rgb(255, 248, 236);
+
     }
 
     .download-btn {
@@ -52,8 +64,7 @@
       font-size: 1rem;
       font-weight: bold;
       color: white;
-      background-color: #00c853;
-      border: none;
+      background-color: #00001a;
       border-radius: 8px;
       text-decoration: none;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
@@ -61,34 +72,30 @@
     }
 
     .download-btn:hover {
-      background-color: #00b248;
+      background-color: #011b40;
       transform: translateY(-3px);
     }
 
-    .app-image {
-      margin-top: 3rem;
-    }
 
     .app-image img {
       max-width: 100%;
-      height: auto;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
     }
 
     .feedback-section {
-      background-color: #2a5298;
-      padding: 3rem 2rem;
-      margin-top: 4rem;
-      border-radius: 8px;
-      width: 100%;
+            background: url('bg.svg') no-repeat center center fixed;
+      background-size: cover;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-radius: 12px;
       max-width: 800px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
     }
 
     .feedback-section h2 {
-      margin-bottom: 1.5rem;
       font-size: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     .feedback-form {
@@ -97,31 +104,33 @@
       gap: 1rem;
     }
 
-    .feedback-form input, .feedback-form textarea {
+    .feedback-form input,
+    .feedback-form textarea {
       padding: 12px;
       font-size: 1rem;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 8px;
-      outline: none;
+      width: 100%;
     }
 
     .feedback-form button {
       padding: 12px;
-      background-color: #00c853;
+      background-color: #840051;
       color: white;
       border: none;
       border-radius: 8px;
       font-size: 1rem;
+      font: poppins;
+      font-weight: 900;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .feedback-form button:hover {
-      background-color: #00b248;
+      background-color: #0063ba;
       transform: translateY(-3px);
     }
 
-    /* Responsive Design */
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -137,40 +146,163 @@
       }
 
       .feedback-section {
-        padding: 2rem 1rem;
-      }
-
-      .feedback-form input, .feedback-form textarea {
-        font-size: 0.9rem;
-      }
-
-      .feedback-form button {
-        font-size: 0.9rem;
+        padding: 1.5rem;
       }
     }
+        /* Popup container style */
+        #popup-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 250px;
+            background-color: white;
+            border: 2px solid #000;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            z-index: 1000;
+            display: none; /* Hidden by default */
+        }
+
+        /* Image inside popup */
+        #popup-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Close button style */
+        #close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            color: #000;
+            cursor: pointer;
+        }
+
+        /* Download button style */
+        #download-btn {
+            background-color: #ffe600;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px;
+            font: poppins;
+            font-weight: 900;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #download-btn:hover {
+            background-color: #fffb8f;
+        }
+
+        /* Media Query for smaller screens (mobile) */
+        @media (max-width: 600px) {
+            #popup-container {
+                width: 180px; /* Smaller width for mobile */
+                padding: 15px;
+            }
+
+            #popup-container img {
+                width: 100%;
+                height: auto;
+            }
+
+            #download-btn {
+                padding: 8px; /* Smaller button on mobile */
+            }
+        }
+  
   </style>
 </head>
 <body>
   <div class="content">
-    <h1>Welcome to EduBuddy 📚</h1>
+    <h1>EduBuddy 📚</h1>
     <p>Chat with classmates, share notes, and collaborate on study goals — all in one app.</p>
+   
     <a href="https://drive.google.com/file/d/1xdtevQxJ-0tqwt2GjnHZaKlfxHRL0Grh/view" class="download-btn" download>
       📥 Download EduBuddy App
     </a>
-
     <div class="app-image">
-      <img src="app.png" alt="EduBuddy App Preview" />
+      <img src="app.png" alt="EduBuddy App Screenshot" />
     </div>
-  </div>
 
   <div class="feedback-section">
-    <h2>We'd love to hear your feedback!</h2>
-    <form class="feedback-form" action="#" method="POST">
+    <h2>We'd love your feedback!</h2>
+    <form class="feedback-form" action="https://formsubmit.co/harshit1232.be23@chitkarauniversity.edu.in" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="feedback" rows="4" placeholder="Your Feedback" required></textarea>
+      <textarea name="message" rows="4" placeholder="Your Feedback" required></textarea>
+      <!-- Optional anti-spam and redirect -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://your-edubuddy-link.com/thankyou.html">
       <button type="submit">Submit Feedback</button>
     </form>
-  </div>
+  </div> <!-- feedback-section -->
+
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem; flex-wrap: nowrap; ">
+    <img src="1.png" alt="Screenshot 1"
+        style="width: 400px; border-radius: 12px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;"
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.3)'"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'" />
+    
+    <img src="2.png" alt="Screenshot 2"
+        style="width: 400px; border-radius: 12px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;"
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.3)'"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'" />
+</div>
+
+<style>
+    @media (max-width: 768px) {
+        div {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        img {
+            width: 100%;
+            max-width: 300px; /* Adjust size for mobile */
+        }
+    }
+</style>
+  <!-- Flexbox Images with Inline Hover Effect -->
+<br><br>
+<!-- The popup container for QR code -->
+    <div id="popup-container">
+        <!-- Close button inside popup -->
+        <button id="close-btn">&times;</button>
+        
+        <!-- Image inside popup -->
+        <img src="qr-code.png" alt="QR Code">
+        
+        <!-- Download button -->
+        <button id="download-btn" onclick="window.location.href='qr-code.png'">Download Now</button>
+    </div>
+
+   <script>
+        // Get the popup and close button elements
+        const popup = document.getElementById("popup-container");
+        const closeBtn = document.getElementById("close-btn");
+
+        // Function to close the popup
+        closeBtn.onclick = function() {
+            popup.style.display = "none";
+        }
+
+        // Show the popup after a 2-second delay
+        setTimeout(function() {
+            popup.style.display = "block";
+        }, 2000); // 2000 milliseconds = 2 seconds
+    </script>
+
+
+   
+
 </body>
 </html>
